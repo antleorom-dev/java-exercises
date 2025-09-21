@@ -9,7 +9,8 @@ public class ThirdElement {
 
         ArrayList<String> list = new ArrayList<>();
         while (true) {
-            String input = scanner.nextLine();
+            System.out.println("Give a name");
+            String input = scanner.nextLine();        
             if (input.equals("")) {
                 break;
             }
@@ -17,6 +18,6 @@ public class ThirdElement {
             list.add(input);
         }
 
-        System.out.println(lista.get(0));
+        System.out.println(list.get(2));
     }
 }

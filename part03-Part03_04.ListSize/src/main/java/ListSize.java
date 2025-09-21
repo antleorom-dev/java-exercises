@@ -13,9 +13,12 @@ public class ListSize {
             if (input.equals("")) {
                 break;
             }
-
+            
             list.add(input);
+
         }
+        int total = list.size();
+        System.out.println("In total: " + total);
 
     }
 }

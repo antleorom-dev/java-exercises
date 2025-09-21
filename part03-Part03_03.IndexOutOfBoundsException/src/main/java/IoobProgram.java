@@ -14,6 +14,9 @@ public class IoobProgram {
         lines.add("you and I have even heard of the quantum theory and atomic structures. Bohr came");
         lines.add("up with his quantum theory while studying...");
 
+        
+        int i = lines.size();
+        System.out.println(lines.get(i));
         for (String line : lines) {
             System.out.println(line);
         }
