@@ -6,6 +6,8 @@ public class AgeOfTheOldest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
+        int oldest = 0;
+        
         while (true){
         String input = scanner.nextLine();
         
@@ -14,14 +16,15 @@ public class AgeOfTheOldest {
         }
         
         String[] pieces = input.split(",");
+        int age = Integer.valueOf(pieces[1]);
         
-        for (String number : pieces){
-            System.out.println(pieces.length - 1);
+        if (age > oldest){
+            oldest = age;
         }
         
         }
 
-        
+        System.out.println("Age of the oldest: " + oldest);
         
     }
 }
