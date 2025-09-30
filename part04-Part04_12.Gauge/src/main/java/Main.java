@@ -3,9 +3,17 @@ public class Main {
 
     public static void main(String[] args) {
         // Test your Gauge class here
-
+        Gauge g = new Gauge();
         // Gauge g = new Gauge();
-
+        while (!g.full()) {
+            System.out.println("Not full! value: " + g.value());
+            g.increase();
+        }
+        
+        
+        System.out.println("Full! value: " + g.value());
+            g.decrease();
+        System.out.println("Not full! value: " + g.value());
         // while(!g.full()) {
         //     System.out.println("Not full! Value: " + g.value());
         //     g.increase();
