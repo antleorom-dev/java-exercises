@@ -1,16 +1,36 @@
-
 import java.util.Scanner;
 
 public class MainProgram {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        // you can write test code here
-        // however, remove all unnecessary code when doing the final parts of the exercise
 
-        // In order for the tests to work, the objects must be created in the
-        // correct order in the main program. First the object that tracks the total
-        // sum, secondly the object that tracks the sum of even numbers, 
-        // and lastly the one that tracks the sum of odd numbers!
+        Statistics allNumbers = new Statistics();   // 1º suma de todos
+        Statistics evenNumbers = new Statistics();  // 2º suma de pares
+        Statistics oddNumbers = new Statistics();   // 3º suma de impares
+
+        System.out.println("Enter numbers:");
+
+        while (true) {
+            int number = Integer.valueOf(scanner.nextLine());
+
+            if (number == -1) {
+                break; // parar cuando el usuario escriba -1
+            }
+
+            // siempre añadimos a todos
+            allNumbers.addNumber(number);
+
+            // comprobamos si es par o impar
+            if (number % 2 == 0) {
+                evenNumbers.addNumber(number);
+            } else {
+                oddNumbers.addNumber(number);
+            }
+        }
+
+        // mostramos resultados
+        System.out.println("Sum: " + allNumbers.sum());
+        System.out.println("Sum of even numbers: " + evenNumbers.sum());
+        System.out.println("Sum of odd numbers: " + oddNumbers.sum());
     }
 }
