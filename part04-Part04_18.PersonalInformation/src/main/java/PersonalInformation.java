@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+
+
 public class PersonalInformation {
 
     private String firstName;
@@ -9,6 +12,10 @@ public class PersonalInformation {
         this.firstName = firstName;
         this.lastName = lastName;
         this.identificationNumber = identificationNumber;
+    }
+
+    PersonalInformation(ArrayList<PersonalInformation> infoCollection) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getFirstName() {

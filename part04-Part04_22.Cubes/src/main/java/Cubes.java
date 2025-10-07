@@ -5,6 +5,25 @@ public class Cubes {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        
+        while (true){
+            System.out.println("Give a numeber:");
+            String input = scanner.nextLine();
+            
+            if(input.equalsIgnoreCase("end")){
+                break;
+            }
+            
+            int number = Integer.valueOf(input);
+            int cube = number * number * number;
+            
+            System.out.println(cube);
+            
+            
+        }
+        
+        
+        
+        
     }
 }
