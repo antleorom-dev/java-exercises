@@ -1,11 +1,12 @@
 
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StoringRecords {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Filename:");
@@ -20,8 +21,29 @@ public class StoringRecords {
         }
     }
 
-    public static ArrayList<Person> readRecordsFromFile(String file) {
+    public static ArrayList<Person> readRecordsFromFile(String file){
         ArrayList<Person> persons = new ArrayList<>();
+
+        try ( Scanner scanner = new Scanner(Paths.get(file))) {
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+
+                if (line.isEmpty()) {
+                    continue;
+                }
+
+                String[] parts = line.split(",");
+                String name = parts[0].trim();
+                int age = Integer.valueOf(parts[1].trim());
+
+                persons.add(new Person(name, age));
+
+            }
+
+        } catch (Exception e){
+            System.out.println("Reading the file " + file + " failed.");
+        }
 
         // Write here the code for reading from file
         // and printing the read records
